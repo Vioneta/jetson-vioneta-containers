@@ -23,7 +23,7 @@ services:
       - /etc/timezone:/etc/timezone:ro
 
   assist-microphone:
-    image: dustynv/wyoming-assist-microphone:latest-r36.2.0
+    image: vioneta/wyoming-assist-microphone:r35.5.0
     <<: *shared-properties
     container_name: assist-microphone
     hostname: assist-microphone

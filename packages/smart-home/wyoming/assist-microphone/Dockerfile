@@ -25,7 +25,7 @@ ENV PIP_BREAK_SYSTEM_PACKAGES=1 \
     SATELLITE_DONE_WAV="/usr/src/sounds/done.wav" \
     SATELLITE_DEBUG="true" \
     \
-    ASSIST_PIPELINE_NAME="Home Assistant" \
+    ASSIST_PIPELINE_NAME="Vioneta Agro" \
     WAKEWORD_SERVICE_URI="tcp://127.0.0.1:10400" \
     WAKEWORD_NAME="ok_nabu" \
     \

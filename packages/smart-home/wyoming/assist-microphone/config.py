@@ -5,7 +5,8 @@ def get_latest_stable_version(fallback="1.2.0") -> str:
     try:
         response = requests.get('https://raw.githubusercontent.com/rhasspy/wyoming-satellite/master/wyoming_satellite/VERSION')
         if response.status_code == 200:
-            return response.text.strip()
+            # return response.text.strip()
+            return fallback
         else:
             print("Failed to fetch version information. Status code:", response.status_code)
             return fallback
