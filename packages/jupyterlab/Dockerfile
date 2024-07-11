@@ -29,5 +29,5 @@ RUN jupyter lab --version && jupyter lab --generate-config
 
 COPY jupyter_server_config.json /root/.jupyter/
 COPY start_jupyter /
-CMD /start_jupyter && /bin/bash
+CMD /start_jupyter 
 

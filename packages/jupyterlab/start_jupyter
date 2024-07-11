@@ -9,10 +9,10 @@
 #
 # The `/data` location is automatically mounted to your `jetson-containers/data` directory.
 
-: "${JUPYTER_ROOT:=/}"
+: "${JUPYTER_ROOT:=/data}"
 : "${JUPYTER_PORT:=8888}"
 : "${JUPYTER_LOGS:=/data/logs/jupyter.log}"
-: "${JUPYTER_PASSWORD:=nvidia}"
+: "${JUPYTER_PASSWORD:=vioneta}"
 
 server_url="http://$(hostname -I | cut -d' ' -f1):${JUPYTER_PORT}"
 
@@ -20,9 +20,8 @@ printf "\nStarting JupyterLab server at $server_url (password \"${JUPYTER_PASSWO
 
 # python3 -c "from notebook.auth.security import set_password; set_password(\"${JUPYTER_PASSWORD}\", '/root/.jupyter/jupyter_notebook_config.json')"
 
-/bin/bash -c "jupyter lab --no-browser --ip 0.0.0.0 --port $JUPYTER_PORT --notebook-dir $JUPYTER_ROOT --allow-root &> $JUPYTER_LOGS" &
+/bin/bash -c "jupyter lab --no-browser --ip 0.0.0.0 --port $JUPYTER_PORT --notebook-dir $JUPYTER_ROOT --allow-root" 
 
-timeout 5 tail -f $JUPYTER_LOGS
 
 printf "\nJupyterLab server is now started\n\n"
 printf "JupyterLab URL:   $server_url (password \"${JUPYTER_PASSWORD}\")\n"
